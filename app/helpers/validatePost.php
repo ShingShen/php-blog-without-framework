@@ -1,3 +1,7 @@
+<!-- 
+    validatePost
+ -->
+
 <?php
 function validatePost($post)
 {

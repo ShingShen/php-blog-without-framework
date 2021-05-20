@@ -1,3 +1,8 @@
+<!-- 
+    validateUser
+    validateLogin
+ -->
+
 <?php
 function validateUser($user)
 {

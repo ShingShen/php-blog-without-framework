@@ -1,3 +1,7 @@
+<!-- 
+    validatedateTopic
+ -->
+
 <?php
 function validateTopic($topic)
 {

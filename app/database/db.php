@@ -1,5 +1,15 @@
 <!-- To Get Database -->
-
+<!-- 
+    executeQuery
+    selectAll
+    selectOne
+    create
+    update
+    delete
+    getPublishedPosts
+    getPostsByTopicId
+    searchPosts
+ -->
 <?php
 session_start();
 require('connect.php');

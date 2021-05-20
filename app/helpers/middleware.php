@@ -1,3 +1,9 @@
+<!-- 
+    usersOnly
+    adminOnly
+    guestOnly
+ -->
+
 <?php
 
 function usersOnly($redirect = '/index.php')
