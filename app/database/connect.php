@@ -1,3 +1,5 @@
+<!-- To Connect Database -->
+
 <?php
 
 $host = 'localhost';
@@ -5,13 +7,16 @@ $user = 'root';
 $pass = '';
 $db_name = 'blog'; //the name do be same as database
 
+//Create connection
 $conn = new MySQLi($host, $user, $pass, $db_name);
 
+//Check connection
 if ($conn->connect_error){
     die('Database connection error: ' . $conn->connect_error);
-} else {
+} /* else {
     echo "Database connection is successful!";
 } 
+*/
 
 /*
 create the database called blog in phpmyadmin,

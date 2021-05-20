@@ -1,3 +1,5 @@
+<!-- To Get Database -->
+
 <?php
 session_start();
 require('connect.php');
