@@ -42,7 +42,7 @@ $(document).ready(function(){
       });
 
 });
-ClassicEditor
+ClassicEditor //edit content
     .create( document.querySelector( '#body' ), {
         toolbar: [ 'heading', '|', 'bold', 'italic', 'link', 'bulletedList', 'numberedList', 'blockQuote' ],
         heading: {

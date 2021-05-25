@@ -40,7 +40,7 @@ function selectAll($table, $conditions =[])
         $stmt->execute();
         $records = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
         return $records;
-    }else {
+    } else {
         //return records that match conditions...
         // $sql = "SELECT * FROM $table WHERE username='shem' AND admin=1";
         
