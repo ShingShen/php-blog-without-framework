@@ -24,11 +24,12 @@ and table called users in the database.
 
 The table has to contain following contents:
 
-id: Type- INT Length/Valuses- 11 Index- PRIMARY A_I YES
-admin: Type- TINYINT
-username: Type- VARCHAR Length/Valuses- 255
-email: Type- VARCHAR Length/Valuses- 255 Index- UNIQUE
-password: Type- VARCHAR Length/Valuses- 255
-create_at: Type- TIMESTAMP Default- CURRENT_TIMESTAMP
+Name       Type        Length/Valuses   Default             Index
+id         INT         11               None                PRIMARY A_I YES
+admin      TINYINT                      None                ---
+username   VARCHAR     255              None                ---
+email      VARCHAR     255              None                UNIQUE
+password   VARCHAR     255              None                ---
+create_at  TIMESTAMP                    CURRENT_TIMESTAMP   ---
 
 */

@@ -171,7 +171,7 @@ header .menu-toggle{
     width: 80%;
     height: 350px;
     margin: 0 auto;
-    overflow: hidden;
+    overflow: hidden; /* hide the part of content beyond the margin */
     padding: 10px 0px 10px 0px;
 }
 .post-slider .post-wrapper .post{
