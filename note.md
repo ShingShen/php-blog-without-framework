@@ -1,7 +1,3 @@
-If you want to enbedd facebook pages, the **page visibility** must be published.<br>
-The **facebook plugin** would not show in html file,<br>
-You need to start in localhost to show this.<br>
-
 # live-server:
 only be used to run html file
 
@@ -48,6 +44,8 @@ create_at  TIMESTAMP                    CURRENT_TIMESTAMP   ---
 
 **$stmt:** Represents a prepared statement.<br>
 
+**affect_rows:** Returns the total number of rows changed, deleted, inserted, or matched by the last statement executed<br>
+
 **execute():** Executes a prepared statement<br>
 
 **get_result():** Gets a result set from a prepared statement<br>
@@ -72,10 +70,28 @@ create_at  TIMESTAMP                    CURRENT_TIMESTAMP   ---
 
 **str_repeat(string, int):** Repeat a string<br>
 
-**bind_param():** Binds variables to a prepared statement as parameters<br>
+**bind_param(string, mixed, ...mixed):** Binds variables to a prepared statement as parameters<br>
 
 **isset():** Determine if a variable is declared and is different than null<br>
 
 **unset():** Unset a given variable<br>
 
-**array_push():** Push one or more elements onto the end of array
+**array_push():** Push one or more elements onto the end of array<br>
+
+**password_hash():** Creates a password hash<br>
+
+
+# Others
+If you want to enbedd facebook pages, the **page visibility** must be published.<br>
+The **facebook plugin** would not show in html file,<br>
+You need to start in localhost to show this.<br>
+
+**register-btn check**
+```
+<?php
+if (isset($_POST['register-btn'])) {
+    var_dump($_POST);
+    die();
+}
+?>
+```

@@ -14,11 +14,14 @@
 session_start();
 require('connect.php');
 
+
+// DevTest //
 function dd($value) //to be deleted
 {
     echo "<pre>", print_r($value, true), "</pre>";
     die();
 }
+// DevTest //
 
 function executeQuery($sql, $data)
 {
@@ -59,7 +62,7 @@ function selectAll($table, $conditions = [])
     }
 }
 
-// DevTest
+// DevTest- selectAll
 
 // $conditions = [
 //     'admin' => 1,
@@ -93,7 +96,7 @@ function selectOne($table, $conditions)
         return $records;
 }
 
-// DevTest
+// DevTest- selectOne
 
 // $conditions = [
 //     'admin' => 1,
@@ -118,11 +121,26 @@ function create($table, $data)
         }
         $i++;
     }
-    
     $stmt = executeQuery($sql, $data);
     $id = $stmt->insert_id;
     return $id;
 }
+
+// DevTest- create
+
+// $data = [
+//     'username' => 'peter',
+//     'admin' => 1,
+//     'email' => 'peter@peter.com',
+//     'password' => 'peter'
+// ];
+
+// $id=create('users', $data);
+// dd($id);
+
+// The id number will keep growing in every function execution.
+// The test cannot encrypt the password.
+
 
 function update($table, $id, $data)
 {
@@ -143,8 +161,20 @@ function update($table, $id, $data)
     $sql = $sql . " WHERE id=?";
     $data['id'] = $id;
     $stmt = executeQuery($sql, $data);
-    return $stmt->affected_rows;
+    return $stmt->affected_rows; // if the running is sucessful, it will retun 1. 
 }
+
+// DevTest- update
+
+// $data = [
+//     'username' => 'peter peter',
+//     'admin' => 1,
+//     'email' => 'peter@peter.com',
+//     'password' => 'peter'
+// ];
+
+// $id=update('users', 12, $data);
+// dd($id);
 
 function delete($table, $id)
 {
@@ -152,8 +182,13 @@ function delete($table, $id)
     $sql = "DELETE FROM $table WHERE id=?";
     
     $stmt = executeQuery($sql, ['id' => $id]);
-    return $stmt->affected_rows;
+    return $stmt->affected_rows; // if the running is sucessful, it will retun 1.
 }
+
+// DevTest- delete
+
+// $id=delete('users', 12);
+// dd($id);
 
 function getPublishedPosts()
 {

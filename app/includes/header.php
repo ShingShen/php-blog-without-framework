@@ -12,6 +12,7 @@
                 <li>
                     <a href="#">
                         <i class="fa fa-user"></i>
+                        <!-- show the username -->
                         <?php echo $_SESSION['username'] ?>
                         <i class="fa fa-chevron-down" style="font-size: .8em;"></i>
                     </a>

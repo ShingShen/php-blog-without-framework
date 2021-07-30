@@ -21,6 +21,7 @@ $passwordConf = '';
 
 function loginUser($user)
 {
+    // log user in
     $_SESSION['id'] = $user['id'];
     $_SESSION['username'] = $user['username'];
     $_SESSION['admin'] = $user['admin'];
@@ -40,7 +41,7 @@ if (isset($_POST['register-btn']) || isset($_POST['create-admin'])) {
 
     if (count($errors) === 0){
         unset($_POST['register-btn'], $_POST['passwordConf'], $_POST['create-admin']);
-        $_POST['password'] = password_hash($_POST['password'], PASSWORD_DEFAULT);
+        $_POST['password'] = password_hash($_POST['password'], PASSWORD_DEFAULT); // encrypt the password
         
         if (isset($_POST['admin'])) {
             $_POST['admin'] = 1;
@@ -55,12 +56,15 @@ if (isset($_POST['register-btn']) || isset($_POST['create-admin'])) {
             $user = selectOne($table, ['id' => $user_id]);
             loginUser($user);
         }
+        // dd($_POST);
+        // dd($user);
     } else{
         $username = $_POST['username'];
         $admin = isset($_POST['admin']) ? 1:0;
         $email = $_POST['email'];
         $password = $_POST['password'];
         $passwordConf = $_POST['passwordConf'];
+        // protect the original input content from clearing
     }
 }
 
