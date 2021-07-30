@@ -31,7 +31,7 @@ function executeQuery($sql, $data)
     return $stmt;
 }
 
-function selectAll($table, $conditions =[])
+function selectAll($table, $conditions = [])
 {
     global $conn;
     $sql = "SELECT * FROM $table";
@@ -59,11 +59,21 @@ function selectAll($table, $conditions =[])
     }
 }
 
+// DevTest
+
+// $conditions = [
+//     'admin' => 1,
+//     'username' => 'shem'
+// ];
+
+// $users=selectAll('users', $conditions);
+// dd($users);
+
 function selectOne($table, $conditions)
 {
     global $conn;
     $sql = "SELECT * FROM $table";
-        //return records that match conditions...
+        // return records that match conditions...
         // $sql = "SELECT * FROM $table WHERE username='shem' AND admin=1";
         
         $i = 0;
@@ -82,6 +92,16 @@ function selectOne($table, $conditions)
         $records = $stmt->get_result()->fetch_assoc();
         return $records;
 }
+
+// DevTest
+
+// $conditions = [
+//     'admin' => 1,
+//     'username' => 'shem'
+// ];
+
+// $users=selectOne('users', $conditions);
+// dd($users);
 
 function create($table, $data)
 {
