@@ -83,7 +83,7 @@ if (isset($_POST['update-user'])) {
         header('location: ' . BASE_URL . '/admin/users/index.php');
         exit();
               
-    } else{
+    } else {
         $username = $_POST['username'];
         $admin = isset($_POST['admin']) ? 1:0;
         $email = $_POST['email'];
@@ -100,6 +100,11 @@ if (isset($_GET['id'])) {
     $admin = $user['admin'] == 1;
     $email = $user['email'];
 }
+
+// DevTest- check login-btn
+// if(isset($_POST['login-btn'])) {
+//     dd($_POST);
+// }
 
 if (isset($_POST['login-btn'])) {
         $errors = validateLogin($_POST);

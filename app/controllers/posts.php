@@ -7,7 +7,7 @@ include(ROOT_PATH . "/app/helpers/validatePost.php");
 
 $table = 'posts';
 $topics = selectAll('topics');
-$posts = selectAll($table);
+$posts = getPostsWithUsername();
 
 $errors = array();
 $id = "";

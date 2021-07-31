@@ -80,6 +80,8 @@ create_at  TIMESTAMP                    CURRENT_TIMESTAMP   ---
 
 **password_hash():** Creates a password hash<br>
 
+**password_verify(string, string):** Verifies that a password matches a hash<br>
+
 
 # Others
 If you want to enbedd facebook pages, the **page visibility** must be published.<br>

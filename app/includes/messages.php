@@ -4,6 +4,7 @@
             <?php
                 unset($_SESSION['message']);
                 unset($_SESSION['type']);
+                // destroy the message after refresh
             ?>
         </div>
     <?php endif; ?>

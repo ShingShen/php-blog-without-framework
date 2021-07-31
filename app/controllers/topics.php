@@ -27,7 +27,8 @@ if (isset($_POST['add-topic'])) {
     } else {
         $name = $_POST['name'];
         $description = $_POST['description'];
-    }  
+    }
+    // dd($_POST);  
 }
 
 if (isset($_GET['id'])) {
@@ -65,4 +66,5 @@ if (isset($_POST['update-topic'])) {
         $name = $_POST['name'];
         $description = $_POST['description'];
     }
+    // dd($_POST);
 }
