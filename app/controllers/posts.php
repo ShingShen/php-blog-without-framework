@@ -50,6 +50,7 @@ if (isset($_GET['published']) && isset($_GET['p_id'])) {
 
 if(isset($_POST['add-post'])) {
     adminOnly();
+    // dd($_POST);
     // dd($_FILES['image']);
     $errors = validatePost($_POST);
 
@@ -74,7 +75,7 @@ if(isset($_POST['add-post'])) {
     unset($_POST['add-post']);
     $_POST['user_id'] = $_SESSION['id'];
     $_POST['published'] = isset($_POST['published']) ? 1:0;
-    $_POST['body'] = htmlentities($_POST['body']);
+    $_POST['body'] = htmlentities($_POST['body']); // prevent XSS attacks
 
     $post_id = create($table, $_POST);
     $_SESSION['message'] = "Post created successfully";

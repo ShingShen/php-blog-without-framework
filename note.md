@@ -15,18 +15,38 @@ In md file, Ctrl+Shift+V can browse the md file<br>
 
 
 # phpMyAdmin:
-create the database called blog in phpmyadmin,<br>
-and table called users in the database.<br>
+create the database called **blog** in phpmyadmin,<br>
+and create tables called **users**, **posts** and **topics** in the database.<br>
 
-The table has to contain following contents:<br>
+The tables have to contain following contents<br>
+**users:**<br>
 ```
-Name       Type        Length/Valuses   Default             Index
-id         INT         11               None                PRIMARY A_I YES
-admin      TINYINT                      None                ---
-username   VARCHAR     255              None                ---
-email      VARCHAR     255              None                UNIQUE
-password   VARCHAR     255              None                ---
-create_at  TIMESTAMP                    CURRENT_TIMESTAMP   ---
+Name         Type        Length/Valuses   Default             Index
+id           INT         11               None                PRIMARY A_I YES
+admin        TINYINT                      None                ---
+username     VARCHAR     255              None                ---
+email        VARCHAR     255              None                UNIQUE
+password     VARCHAR     255              None                ---
+create_at    TIMESTAMP                    CURRENT_TIMESTAMP   ---
+```
+**topics:**<br>
+```
+Name         Type        Length/Valuses   Default             Index
+id           INT         11               None                PRIMARY A_I YES
+name         VARCHAR     100              None                UNIQUE
+description  TEXT                         None                ---
+```
+**posts:**<br>
+
+```
+Name         Type        Length/Valuses   Default             Index
+id           INT         11               None                PRIMARY A_I YES
+user_id      INT         11               None                ---
+title        VARCHAR     255              None                ---
+image        VARCHAR     255              None                UNIQUE
+body         TEXT                         None                ---
+published    TINYINT                      None
+create_at    DATETIME                     CURRENT_TIMESTAMP   ---
 ```
 
 # PHP NOTE:
@@ -81,6 +101,8 @@ create_at  TIMESTAMP                    CURRENT_TIMESTAMP   ---
 **password_hash():** Creates a password hash<br>
 
 **password_verify(string, string):** Verifies that a password matches a hash<br>
+
+**htmlentities():** Convert all applicable characters to HTML entities
 
 
 # Others
