@@ -19,6 +19,8 @@ $published = "";
 if (isset($_GET['id'])) {
     $post = selectOne($table, ['id' => $_GET['id']]);
     
+    // dd($post);
+
     $id = $post['id'];
     $title = $post['title'];
     $body = $post['body'];
@@ -50,8 +52,9 @@ if (isset($_GET['published']) && isset($_GET['p_id'])) {
 
 if(isset($_POST['add-post'])) {
     adminOnly();
-    // dd($_POST);
+    // dd($_POST); 
     // dd($_FILES['image']);
+    // dd($_FILES['image'][name]);
     $errors = validatePost($_POST);
 
     if (!empty($_FILES['image']['name'])){

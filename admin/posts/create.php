@@ -38,6 +38,7 @@ adminOnly();
                 <?php include(ROOT_PATH . '/app/helpers/formErrors.php'); ?>
                 
                 <form action="create.php" method="post" enctype="multipart/form-data">
+                <!-- enctype="multipart/form-data": enable upload image files -->
                     <div>
                         <label>Title</label>
                         <input type="text" name="title" value="<?php echo $title ?>" class="text-input">

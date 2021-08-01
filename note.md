@@ -21,32 +21,46 @@ and create tables called **users**, **posts** and **topics** in the database.<br
 The tables have to contain following contents<br>
 **users:**<br>
 ```
-Name         Type        Length/Valuses   Default             Index
-id           INT         11               None                PRIMARY A_I YES
-admin        TINYINT                      None                ---
-username     VARCHAR     255              None                ---
-email        VARCHAR     255              None                UNIQUE
-password     VARCHAR     255              None                ---
-create_at    TIMESTAMP                    CURRENT_TIMESTAMP   ---
+Name         Type        Length/Valuses   Default            Null    Index
+id           INT         11               None                       PRIMARY A_I YES
+admin        TINYINT                      None                       ---
+username     VARCHAR     255              None                       ---
+email        VARCHAR     255              None                       UNIQUE
+password     VARCHAR     255              None                       ---
+create_at    TIMESTAMP                    CURRENT_TIMESTAMP          ---
 ```
 **topics:**<br>
 ```
-Name         Type        Length/Valuses   Default             Index
-id           INT         11               None                PRIMARY A_I YES
-name         VARCHAR     100              None                UNIQUE
-description  TEXT                         None                ---
+Name         Type        Length/Valuses   Default            Null    Index
+id           INT         11               None                       PRIMARY A_I YES
+name         VARCHAR     100              None                       UNIQUE
+description  TEXT                         None                       ---
 ```
 **posts:**<br>
 
 ```
-Name         Type        Length/Valuses   Default             Index
-id           INT         11               None                PRIMARY A_I YES
-user_id      INT         11               None                ---
-title        VARCHAR     255              None                ---
-image        VARCHAR     255              None                UNIQUE
-body         TEXT                         None                ---
-published    TINYINT                      None
-create_at    DATETIME                     CURRENT_TIMESTAMP   ---
+Name         Type        Length/Valuses   Default             Null   Index
+id           INT         11               None                       PRIMARY A_I YES
+user_id      INT         11               None                       ---
+topic_id     INT         11               None                Yes    ---
+title        VARCHAR     255              None                       ---
+image        VARCHAR     255              None                       UNIQUE
+body         TEXT                         None                       ---
+published    TINYINT                      None                       ---
+create_at    DATETIME                     CURRENT_TIMESTAMP          ---
+```
+**topic_id** need to coonet to the **id** in **topics**<br>
+The setting is as following:<br>
+blog -> posts -> Structure -> Relation view<br>
+```
+Foreign key constraints
+---------------------------------------------------------------------------------------------
+|Action  | Constraint properties                 |Column   |Foreign key constraint(INNODB)  |
+---------------------------------------------------------------------------------------------
+|        |                                       |         |Database   |Table   |Column     |
+---------------------------------------------------------------------------------------------
+|        |ON DELETE(SET NULL) ON UPDATE(CASCADE) |topic_id |blog       |topic   |id         |
+---------------------------------------------------------------------------------------------
 ```
 
 # PHP NOTE:

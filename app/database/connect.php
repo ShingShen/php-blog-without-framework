@@ -5,7 +5,7 @@
 $host = 'localhost';
 $user = 'root';
 $pass = '';
-$db_name = 'blog'; //the name do be same as database
+$db_name = 'blog'; // the name do be same as database
 
 //Create connection
 $conn = new MySQLi($host, $user, $pass, $db_name);
