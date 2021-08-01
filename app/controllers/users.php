@@ -72,6 +72,8 @@ if (isset($_POST['update-user'])) {
     adminOnly();
     $errors = validateUser($_POST);
 
+    // dd($_POST);
+
     if (count($errors) === 0){
         $id = $_POST['id'];
         unset($_POST['passwordConf'], $_POST['update-user'], $_POST['id']);
@@ -85,7 +87,7 @@ if (isset($_POST['update-user'])) {
               
     } else {
         $username = $_POST['username'];
-        $admin = isset($_POST['admin']) ? 1:0;
+        $admin = isset($_POST['admin']) ? 1 : 0;
         $email = $_POST['email'];
         $password = $_POST['password'];
         $passwordConf = $_POST['passwordConf'];
@@ -95,9 +97,11 @@ if (isset($_POST['update-user'])) {
 if (isset($_GET['id'])) {
     $user = selectOne($table, ['id' => $_GET['id']]);
     
+    // dd($user);
+
     $id = $user['id'];
     $username = $user['username'];
-    $admin = $user['admin'] == 1;
+    $admin = $user['admin'];
     $email = $user['email'];
 }
 

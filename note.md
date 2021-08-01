@@ -118,8 +118,18 @@ Foreign key constraints
 
 **htmlentities():** Convert all applicable characters to HTML entities<br>
 
+**html_entity_decode():** Convert HTML entities to their corresponding characters<br>
+
 **move_uploaded_file():** Moves an uploaded file to a new location<br>
 
+**Equal == :** **TRUE** if $a is equal to $b after type juggling.<br>
+**Identical === :** **TRUE** if $a is equal to $b, and they are of the **same type**.<br>
+
+**date():** Format a local time/date<br>
+
+**strtotime():** Parse about any English textual datetime description into a Unix timestamp<br>
+
+**substr():** Return part of a string<br>
 
 # Others
 If you want to enbedd facebook pages, the **page visibility** must be published.<br>

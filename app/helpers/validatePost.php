@@ -1,5 +1,5 @@
 <!-- 
-    validatePost
+    validatePost 
  -->
 
 <?php

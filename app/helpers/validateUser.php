@@ -27,10 +27,10 @@ function validateUser($user)
     // dd($errors);
 
     // ??
-    $existingUser = selectOne('users', ['email' => $user['email']]);
-    if ($existingUser) {
-        array_push($errors, 'Email already exists');
-    }
+    // $existingUser = selectOne('users', ['email' => $user['email']]);
+    // if ($existingUser) {
+    //     array_push($errors, 'Email already exists');
+    // }
     // ??
 
     $existingUser = selectOne('users', ['email' => $user['email']]);
