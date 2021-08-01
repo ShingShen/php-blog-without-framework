@@ -116,7 +116,9 @@ Foreign key constraints
 
 **password_verify(string, string):** Verifies that a password matches a hash<br>
 
-**htmlentities():** Convert all applicable characters to HTML entities
+**htmlentities():** Convert all applicable characters to HTML entities<br>
+
+**move_uploaded_file():** Moves an uploaded file to a new location<br>
 
 
 # Others
